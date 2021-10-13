@@ -1,7 +1,7 @@
 #!/bin/bash
 chmod 755 *
 
-export WIDGET_CONTROL="mem, cpu, proc, user, disk"
+export WIDGET_CONTROL="mem, cpu, proc, user, disk, sound"
 #unset WIDGET_CONTROL
 
 if [ -z ${WIDGET_CONTROL+x} ];
@@ -15,6 +15,7 @@ if [ -z ${WIDGET_CONTROL+x} ];
       proc="proc"
       user="user"
       disk="disk"
+      sound="sound"
       if [[ "$WIDGET_CONTROL" == *"$mem"* ]]; then
           ./mem.sh
           echo ""
@@ -33,6 +34,10 @@ if [ -z ${WIDGET_CONTROL+x} ];
       fi
       if [[ "$WIDGET_CONTROL" == *"$disk"* ]]; then
           ./disk.sh
+          echo ""
+      fi
+      if [[ "$WIDGET_CONTROL" == *"$sound"* ]]; then
+          ./sound.sh
           echo ""
       fi
   fi
