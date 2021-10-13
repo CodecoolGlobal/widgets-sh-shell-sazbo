@@ -1,2 +1,2 @@
 #!/bin/bash
-ps -e | wc -l
+echo "Number of running processes: $(ps -e | wc -l)"
